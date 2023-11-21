@@ -42,7 +42,7 @@
 </li>
 @auth
 <li class="u-nav-item">
-    <a href="{{ route('LocatorMap.googlemap') }} class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;">Maps</a>
+    <a href="{{ route('LocatorMap.googlemap') }}" class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;">Maps</a>
 </li>
 @else
 <li class="u-nav-item">
