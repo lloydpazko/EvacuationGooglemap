@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GoogleMapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use App\Http\Controllers\ProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//default controller routes neto
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,5 +44,7 @@ Route::get('/buttons/icon', function () {
 Route::get('/buttons/text-icon', function () {
     return view('buttons-showcase.text-icon');
 })->middleware(['auth'])->name('buttons.text-icon');
+
+route::get('/LocatorMap',[GoogleMapController::class, 'locator'])->name('LocatorMap.googlemap');
 
 require __DIR__ . '/auth.php';
