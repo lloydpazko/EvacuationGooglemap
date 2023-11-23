@@ -46,5 +46,6 @@ Route::get('/buttons/text-icon', function () {
 })->middleware(['auth'])->name('buttons.text-icon');
 
 route::get('/LocatorMap',[GoogleMapController::class, 'google'])->name('LocatorMap.googlemap');
+route::post('/LocatorMap',[GoogleMapController::class, 'store'])->name('LocatorMap.googlemap');
 
 require __DIR__ . '/auth.php';

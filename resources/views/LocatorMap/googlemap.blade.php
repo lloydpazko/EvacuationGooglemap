@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Evacuation locator SYSTEM, Contact Us">
     <meta name="description" content="">
-    <title>Maps</title>
+    <title>Evacuation locator APP</title>
     <link rel="stylesheet" href="{{ asset('nicepage.css') }}" media="screen">
 <link rel="stylesheet" href="{{ asset('Maps.css') }}" media="screen">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.0.3, nicepage.com">
@@ -21,6 +22,7 @@
 		"name": "",
 		"logo": "images/2560px-National_Disaster_Risk_Reduction_and_Management_Council_NDRMMC.svg.png"
 }</script>
+
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Maps">
     <meta property="og:type" content="website">
@@ -38,7 +40,7 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1">
                 <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;" href="{{ url('/dashboard') }}">Home</a>
+                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;" href="{{ url('/dashboard') }}">dashboard</a>
 </li>
 @auth
 <li class="u-nav-item">
@@ -62,7 +64,7 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Dashboard</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Maps</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Register</a>
@@ -76,11 +78,69 @@
           <img src="images/2560px-National_Disaster_Risk_Reduction_and_Management_Council_NDRMMC.svg.png" class="u-logo-image u-logo-image-1">
         </a>
       </div></header>
+
+
+
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256" data-image-height="256" id="sec-02a7">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-title u-text-1">Evacuation locator APP</h1>
-        <p class="u-large-text u-text u-text-default u-text-variant u-text-2">Power by Aparrianos.</p>
-        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1">Read More</a>
+        <script src="{{ asset('js/app.js') }}"></script>
+    <div class="content">
+        <form action="" method="post">
+            @csrf
+            <div class="mapform" >
+                <div class="row">
+                    <div class="col-5">
+                        <input type="text" class="form-control" placeholder="lat" name="lat" id="lat">
+                    </div>
+                    <div class="col-5">
+                        <input type="text" class="form-control" placeholder="lng" name="lng" id="lng">
+                    </div>
+                </div>
+
+                <div id="map" style="height:700px; width: 1500px;" class="my-3"></div>
+
+                <script>
+                    let map;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById("map"), {
+                            center: { lat: -34.397, lng: 150.644 },
+                            zoom: 8,
+                            scrollwheel: true,
+                        });
+
+                        const uluru = { lat: -34.397, lng: 150.644 };
+                        let marker = new google.maps.Marker({
+                            position: uluru,
+                            map: map,
+                            draggable: true
+                        });
+
+                        google.maps.event.addListener(marker,'position_changed',
+                            function (){
+                                let lat = marker.position.lat()
+                                let lng = marker.position.lng()
+                                $('#lat').val(lat)
+                                $('#lng').val(lng)
+                            })
+
+                        google.maps.event.addListener(map,'click',
+                        function (event){
+                            pos = event.latLng
+                            marker.setPosition(pos)
+                        })
+                    }
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
+                        type="text/javascript"></script>
+            </div>
+
+            <input type="submit" class="btn btn-primary">
+        </form>
+
+
+    </div>
+
+
       </div>
     </section>
 

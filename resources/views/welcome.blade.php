@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Evacuation locator SYSTEM, Contact Us">
     <meta name="description" content="">
-    <title>Maps</title>
+    <title>Evacuation locator APP</title>
     <link rel="stylesheet" href="{{ asset('nicepage.css') }}" media="screen">
 <link rel="stylesheet" href="{{ asset('Maps.css') }}" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
@@ -38,7 +38,7 @@
           <div class="u-custom-menu u-nav-container">
             <ul class="u-nav u-unstyled u-nav-1">
                 <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;" href="{{ url('/dashboard') }}">Home</a>
+                    <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" rel="nofollow" style="padding: 10px 20px;" href="{{ url('/dashboard') }}">Dashboard</a>
 </li>
 @auth
 <li class="u-nav-item">
@@ -62,7 +62,7 @@
             <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">dashboard</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Maps</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Login</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" rel="nofollow">Register</a>
@@ -80,7 +80,7 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <h1 class="u-text u-text-default u-title u-text-1">Evacuation locator APP</h1>
         <p class="u-large-text u-text u-text-default u-text-variant u-text-2">Power by Aparrianos.</p>
-        <a href="#" class="u-btn u-button-style u-palette-2-base u-btn-1">Read More</a>
+
       </div>
     </section>
     <section class="u-align-center u-clearfix u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-section-2" id="carousel_f0cc">
