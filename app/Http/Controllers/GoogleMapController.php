@@ -13,8 +13,13 @@ class GoogleMapController extends Controller
     public function store(Request $request)
     {
         location::create([
+            'location'=> $request->location,
+            'address'=> $request->address,
+            'capacity'=> $request->Capacity,
+            'name'=>$request->name,
             'latitude'=>$request->lat,
-            'longitude'=>$request->lng
+            'longitude'=>$request->lng,
+            'contact'=>$request->contact
         ]);
         return view('LocatorMap.googlemap');
     }

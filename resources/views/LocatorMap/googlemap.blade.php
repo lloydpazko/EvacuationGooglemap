@@ -84,27 +84,18 @@
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256" data-image-height="256" id="sec-02a7">
       <div class="u-clearfix u-sheet u-sheet-1">
         <script src="{{ asset('js/app.js') }}"></script>
-    <div class="content">
+
         <form action="" method="post">
             @csrf
-            <div class="mapform" >
-                <div class="row">
-                    <div class="col-5">
-                        <input type="text" class="form-control" placeholder="lat" name="lat" id="lat">
-                    </div>
-                    <div class="col-5">
-                        <input type="text" class="form-control" placeholder="lng" name="lng" id="lng">
-                    </div>
-                </div>
 
-                <div id="map" style="height:700px; width: 1500px;" class="my-3"></div>
+                <div id="map" style="height:700px; width: 800px;" class="my-3"></div>
 
                 <script>
                     let map;
                     function initMap() {
                         map = new google.maps.Map(document.getElementById("map"), {
-                            center: { lat: -34.397, lng: 150.644 },
-                            zoom: 8,
+                            center: { lat: 18.3551, lng: 121.6420 },
+                            zoom: 17,
                             scrollwheel: true,
                         });
 
@@ -132,6 +123,35 @@
                 </script>
                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap"
                         type="text/javascript"></script>
+            </div>
+            <div class="mapform" >
+                <div class="row">
+                    <div class="col-4">
+                        <input type="text" class="form-control" placeholder="location" name="location" id="location">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="address" name="address" id="address">
+                </div>
+            </div>
+            <div class="col-5">
+                <input type="text" class="form-control" placeholder="Capacity" name="Capacity" id="Capacity">
+            </div>
+        </div>
+        <div class="col-5">
+            <input type="text" class="form-control" placeholder="Personel name" name="name" id="name">
+        </div>
+    </div>
+                    <div class="col-4">
+                        <input type="text" class="form-control" placeholder="lat" name="lat" id="lat">
+                    </div>
+                    <div class="col-5">
+                        <input type="text" class="form-control" placeholder="lng" name="lng" id="lng">
+                    </div>
+                </div>
+                <div class="col-5">
+                    <input type="text" class="form-control" placeholder="Contact" name="contact" id="contact">
+                </div>
             </div>
 
             <input type="submit" class="btn btn-primary">
